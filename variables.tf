@@ -13,9 +13,9 @@ variable "location" {
   description = "Azure region where the system topic will be created."
 }
 
-variable "source_arm_resource_id" {
+variable "source_resource_id" {
   type        = string
-  description = "ARM resource ID of the resource that is the source of events (e.g. a Storage Account or Service Bus namespace)."
+  description = "Resource ID of the resource that is the source of events (e.g. a Storage Account or Service Bus namespace)."
 }
 
 variable "topic_type" {
