@@ -1,0 +1,28 @@
+formatter: markdown table
+
+output:
+  file: README.md
+  mode: replace
+  template: |-
+    <!-- BEGIN_AUTOMATED_TF_DOCS_BLOCK -->
+    {{ .Content }}
+    <!-- END_AUTOMATED_TF_DOCS_BLOCK -->
+
+sections:
+  hide: []
+  show: []
+
+content: |-
+  {{ include "docs/content.md" }}
+
+  {{ .Requirements }}
+
+  {{ .Providers }}
+
+  {{ .Modules }}
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}

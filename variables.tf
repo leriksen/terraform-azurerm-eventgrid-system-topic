@@ -23,7 +23,7 @@ variable "topic_type" {
   description = "EventGrid topic type corresponding to the source resource (e.g. 'Microsoft.Storage.StorageAccounts')."
 }
 
-variable "system_assigned_identity_enabled" {
+variable "enable_system_assigned_identity" {
   type        = bool
   default     = false
   description = "When true, a SystemAssigned managed identity is enabled on the system topic."
