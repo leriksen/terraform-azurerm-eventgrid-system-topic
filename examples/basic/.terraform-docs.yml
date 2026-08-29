@@ -10,7 +10,6 @@ output:
 
 sections:
   show:
-    - header
     - inputs
     - outputs
     - providers
@@ -21,42 +20,48 @@ content: |-
   ## Description
   Basic example of how to create an event grid system topic
 
-  {{ .Header }}
-
   ## Example Usage
   Basic usage of this module is as follows:
 
   {{- $providers := include "providers.tf" }}
   {{ if $providers }}
-    ### providers.tf
-    ```hcl
-    {{ $providers }}
-    ```
+  ### providers.tf
+  ```hcl
+  {{ $providers }}
+  ```
   {{ end }}
 
   {{- $data := include "data.tf" }}
   {{ if $data }}
-    ### data.tf
-    ```hcl
-    {{ $data }}
-    ```
+  ### data.tf
+  ```hcl
+  {{ $data }}
+  ```
   {{ end }}
-  
+
   {{- $locals := include "locals.tf" }}
   {{ if $locals }}
-    ### locals.tf
-    ```hcl
-    {{ $locals }}
-    ```
+  ### locals.tf
+  ```hcl
+  {{ $locals }}
+  ```
   {{ end }}
-  
+
   {{- $main := include "main.tf" }}
   {{ if $main }}
-    ### main.tf
-    ```hcl
-    {{ $main }}
-    ```
+  ### main.tf
+  ```hcl
+  {{ $main }}
+  ```
   {{ end }}
+
+  {{ .Providers }}
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
 
 sort:
     enabled: true
